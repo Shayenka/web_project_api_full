@@ -17,7 +17,6 @@ function Login({ onLoggedIn, loggedIn }) {
     setEmail(newEmail);
     const error = ValidateEmail(newEmail);
     setEmailError(error);
-    console.log("prueba")
   }
 
   function handlePasswordChange(evt) {
