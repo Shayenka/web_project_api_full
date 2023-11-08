@@ -18,7 +18,7 @@ const cards = require(cardsPath);
 const { login, createUser } = require('./controllers/users');
 
 // Conexión a la base de datos
-mongoose.connect(MONGODB_URL)
+mongoose.connect(MONGODB_URL || 'mongodb://127.0.0.1:27017/aroundb')
   .then(() => {
     console.log('Connected to database');
   })
@@ -60,5 +60,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT || 3000}`);
 });

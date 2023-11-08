@@ -11,7 +11,7 @@ const jwtMiddleware = async (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
 
   try {
-    const payload = await jwt.verify(token, process.env.SECRET_KEY);
+    const payload = await jwt.verify(token, process.env.SECRET_KEY || 'mysecretkey');
 
     if (!payload) {
       return res.status(403).send({ message: 'El token no es valido' });
