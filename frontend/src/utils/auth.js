@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:3000";
+const BASE_URL = "https://api.shayenkalvarado.com";
 
 export const registerUser = async (email, password) => {
   return fetch(`${BASE_URL}/signup`, {

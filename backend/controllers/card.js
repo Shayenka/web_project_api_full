@@ -3,7 +3,6 @@ const {
   NotFoundError, InvalidError, NotAuthorization, ServerError,
 } = require('../middlewares/errors');
 
-// Controlador para obtener todas las tarjetas
 const getCards = async (req, res, next) => {
   try {
     const cards = await Card.find();
@@ -13,7 +12,6 @@ const getCards = async (req, res, next) => {
   }
 };
 
-// Controlador para crear una nueva tarjeta
 const createCard = async (req, res, next) => {
   try {
     const { name, link } = req.body;
@@ -32,7 +30,6 @@ const createCard = async (req, res, next) => {
   }
 };
 
-// Controlador para eliminar una tarjeta por su _id
 const deleteCard = async (req, res, next) => {
   try {
     const { cardId } = req.params;
@@ -58,7 +55,6 @@ const deleteCard = async (req, res, next) => {
   }
 };
 
-// Controlador para dar like a una tajeta
 const likeCard = async (req, res, next) => {
   try {
     const addlike = await Card.findByIdAndUpdate(
@@ -74,7 +70,6 @@ const likeCard = async (req, res, next) => {
   }
 };
 
-// Controlador para quitar like de una tajeta
 const dislikeCard = async (req, res, next) => {
   try {
     const dislike = await Card.findByIdAndUpdate(

@@ -6,7 +6,7 @@ const cors = require('cors');
 const requestLogger = require('./middlewares/request.log');
 const errorLogger = require('./middlewares/error.log');
 
-require('dotenv').config(); // Cargar variables de entorno desde un archivo .env
+require('dotenv').config();
 
 const { PORT, MONGODB_URL } = process.env;
 
@@ -17,7 +17,6 @@ const cards = require(cardsPath);
 
 const { login, createUser } = require('./controllers/users');
 
-// Conexión a la base de datos
 mongoose.connect(MONGODB_URL || 'mongodb://127.0.0.1:27017/aroundb')
   .then(() => {
     console.log('Connected to database');
@@ -52,7 +51,6 @@ app.get('/', (req, res) => {
 
 app.use(errorLogger);
 
-// Middleware de manejo de errores de celebrate
 app.use(errors());
 
 app.use((err, req, res, next) => {
