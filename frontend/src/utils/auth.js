@@ -1,5 +1,6 @@
 const BASE_URL = "https://api.shayenkalvarado.com";
 
+
 export const registerUser = async (email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",

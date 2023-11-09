@@ -1,5 +1,6 @@
 const BASE_URL = "https://api.shayenkalvarado.com";
 
+
 class Api {
   constructor({ address }) {
     this.address = address;
